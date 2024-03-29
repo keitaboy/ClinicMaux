@@ -6,7 +6,7 @@ function listar_consulta() {
         
         "ordering": false,
         "bLengthChange": false,
-       // "searching": { "regex": true },
+        "searching": { "regex": true },
         "lenghtMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "ALL"]],
         "pageLenght": 10,
         "destroy": true,
@@ -33,7 +33,12 @@ function listar_consulta() {
         "language": idioma_espanol,
         select: true
     });
+    
     document.getElementById("tabla_consulta_filter").style.display = "none";
+
+    $('input.column_filter').on('keyup click', function () {
+        filterColumn($(this).parents('tr').attr('data-column'));
+    });
     tableconsulta.on('draw.dt', function () {
         var PageInfo = $('#tabla_consulta_medica').DataTable().page.info();
         tableconsulta.column(0, { page: 'current' }).nodes().each(function (cell, i) {

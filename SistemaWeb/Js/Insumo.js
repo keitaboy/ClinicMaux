@@ -101,7 +101,6 @@ function Registrar_Insumo(){
             item:item
         }
     }).done(function(resp){
-        console.log(resp);
         if(resp>0){
             if(resp==1){
                 $("#modal_registro").modal('hide');
@@ -152,7 +151,6 @@ function Modificar_Insumo(){
             item:item
         }
     }).done(function(resp){
-        console.log("la rpta es: " + resp);
         if(resp>0){
             if(resp==1){
                 $("#modal_editar").modal('hide');
@@ -174,7 +172,6 @@ function listar_combo_item() {
         "url": "../Controlador/insumo/controlador_combo_item_listar.php",
         "type": 'POST'
     }).done(function (resp) {
-        console.log(resp);
         var data = JSON.parse(resp);
         var cadena = "";
         if (data.length > 0) {

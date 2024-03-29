@@ -88,7 +88,6 @@ function Registrar_Especialidad(){
             estatus:estatus
         }
     }).done(function(resp){
-        console.log(resp);
         if(resp>0){
             if(resp==1){
                 $("#modal_registro").modal('hide');
@@ -131,7 +130,6 @@ function Modificar_Especialidad(){
             estatus:estatus
         }
     }).done(function(resp){
-        console.log("la rpta es: " + resp);
         if(resp>0){
             if(resp==1){
                 $("#modal_editar").modal('hide');

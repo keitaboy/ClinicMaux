@@ -39,9 +39,8 @@ function listar_consulta() {
             cell.innerHTML = i + 1 + PageInfo.start;
         });
     });
+    document.getElementById("tabla_consulta_filter").style.display = "none";
 }
-
-document.getElementById("tabla_consulta_filter").style.display = "none";
 
 $('#tabla_consulta_medica').on('click', '.editar', function () {
     var data = tableconsulta.row($(this).parents('tr')).data();//deteccion de fila al hacer click y captura de datos

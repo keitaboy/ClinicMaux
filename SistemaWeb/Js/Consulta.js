@@ -6,7 +6,7 @@ function listar_consulta() {
         
         "ordering": false,
         "bLengthChange": false,
-        "searching": { "regex": true },
+       // "searching": { "regex": true },
         "lenghtMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "ALL"]],
         "pageLenght": 10,
         "destroy": true,

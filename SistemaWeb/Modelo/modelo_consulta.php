@@ -34,8 +34,8 @@ class Modelo_Consulta
 
                 $arreglo[] = $consulta_VU;
             }
-            return $arreglo;
             $this->conexion->cerrar();
+            return $arreglo;            
         }
     }
 
@@ -49,8 +49,8 @@ class Modelo_Consulta
 
                 $arreglo[] = $consulta_VU;
             }
-            return $arreglo;
             $this->conexion->cerrar();
+            return $arreglo;            
         }
     }
 
@@ -64,8 +64,8 @@ class Modelo_Consulta
 
                 $arreglo[] = $consulta_VU;
             }
-            return $arreglo;
             $this->conexion->cerrar();
+            return $arreglo;            
         }
     }
 
@@ -79,8 +79,8 @@ class Modelo_Consulta
 
                 $arreglo[] = $consulta_VU;
             }
-            return $arreglo;
             $this->conexion->cerrar();
+            return $arreglo;            
         }
     }
 
@@ -92,7 +92,7 @@ class Modelo_Consulta
         }else{
             return 0;
         }
-        $this->conexion->cerrar();
+       // $this->conexion->cerrar();
     }
 
     function Editar_Cita($idcita,$idpaciente,$iddoctor,$descripcion,$estatus)
@@ -103,7 +103,7 @@ class Modelo_Consulta
         }else{
                 return 0;
         }
-        $this->conexion->cerrar();
+       // $this->conexion->cerrar();
     }
 
 }

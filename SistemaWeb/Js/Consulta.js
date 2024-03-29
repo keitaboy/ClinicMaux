@@ -4,7 +4,7 @@ function listar_consulta() {
     var ffin=$("#txt_fechafin").val();
     tableconsulta = $("#tabla_consulta_medica").DataTable({
         "ordering": false,
-        "bLengthChange": true,
+        "bLengthChange": false,
         "searching": { "regex": false },
         "lenghtMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "ALL"]],
         "pageLenght": 10,
@@ -32,6 +32,8 @@ function listar_consulta() {
         "language": idioma_espanol,
         select: true
     });
+
+    document.getElementById("tabla_consulta_filter").style.display = "none";
 
     tableconsulta.on('draw.dt', function () {
         var PageInfo = $('#tabla_consulta_medica').DataTable().page.info();

@@ -5,7 +5,7 @@ function listar_consulta() {
     tableconsulta = $("#tabla_consulta_medica").DataTable({
         "ordering": false,
         "bLengthChange": false,
-        "searching": { "regex": true },
+        "searching": { "regex": false },
         "lenghtMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "ALL"]],
         "pageLenght": 10,
         "destroy": true,
@@ -40,6 +40,8 @@ function listar_consulta() {
         });
     });
 }
+
+document.getElementById("tabla_consulta_filter").style.display = "none";
 
 $('#tabla_consulta_medica').on('click', '.editar', function () {
     var data = tableconsulta.row($(this).parents('tr')).data();//deteccion de fila al hacer click y captura de datos

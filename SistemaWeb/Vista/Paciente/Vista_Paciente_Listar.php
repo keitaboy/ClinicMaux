@@ -181,7 +181,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><b>Editar datos del Paciente</b></h4>
+                <h4 class="modal-title"><b>Registro de la mascota</b></h4>
             </div>
 
             <div class="modal-body">
@@ -266,7 +266,7 @@
 </div>
 
 
-<div class="modal fade" id="modal_editar" role="dialog">
+<div class="modal fade" id="modal_editar_dueno" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -276,112 +276,52 @@
 
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <input type="text" id="txt_idPaciente" hidden></input>
+                <div class="col-lg-6">
+                <input type="text" id="txt_idDueno" hidden></input>
                         <label for="">Nombre</label>
-                        <input type="text" class="form-control" id="txt_Paciente_nombre_editar"
-                            placeholder="Ingrese nombre del Paciente" maxlength="50"
+                        <input type="text" class="form-control" id="txt_Dueno_nombre_editar"
+                            placeholder="Ingrese nombre del Dueño" maxlength="50"
                             onkeypress="return soloLetras(event)"><br>
                     </div>
                     <div class="col-lg-6">
                         <label for="">Apellido</label>
-                        <input type="text" class="form-control" id="txt_Paciente_apellido_editar"
-                            placeholder="Ingrese apellido(s) del Paciente" maxlength="50"
+                        <input type="text" class="form-control" id="txt_Dueno_apellido_editar"
+                            placeholder="Ingrese apellido(s) del Dueño" maxlength="50"
                             onkeypress="return soloLetras(event)"><br>
                     </div>
-                    <!-- Inicio combobox -->
                     <div class="col-lg-6">
                         <label for="">Tipo de documento</label>
-                        <select class="js-example-basic-single" name="state" id="cbm_documento_editar"
-                            style="width:100%;">
+                        <select class="js-example-basic-single" name="state" id="cbm_documento_editar" style="width:100%;">
                         </select><br><br>
                     </div>
-                    <!-- Fin combobox -->
                     <div class="col-lg-6">
+                        <input type="text" id="txt_nroactual_doc_editar" hidden></input>
                         <label for="">Nro Documento</label>
-                        <input type="text" id="txt_Paciente_nrodoc_editar_actual" hidden><br>
-                        <input type="text" class="form-control" id="txt_Paciente_nrodoc_editar_nuevo"
+                        <input type="text" class="form-control" id="txt_nronuevo_doc_editar"
                             placeholder="Ingrese Nro documento" maxlength="10"
                             onkeypress="return soloNumeros(event)"><br>
                     </div>
                     <div class="col-lg-12">
                         <label for="">Celular</label>
-                        <input type="text" class="form-control" id="txt_Paciente_celular_editar"
-                            placeholder="Ingrese celular" maxlength="9" onkeypress="return soloNumeros(event)"><br>
+                        <input type="text" class="form-control" id="txt_Dueno_celular_editar" placeholder="Ingrese celular"
+                            maxlength="9" onkeypress="return soloNumeros(event)"><br>
                     </div>
 
-                    <div class="col-lg-12">
-                        <label for="">Grado</label>
-                        <input type="text" class="form-control" id="txt_Paciente_grado_editar"
-                            placeholder="Ingrese grado de educacion" maxlength="50"
-                            onkeypress="return soloLetras(event)"><br>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <label for="">Fecha de inicio</label>
-                        <input type="date" class="form-control" id="txt_Paciente_fecha_nac_editar"
-                            placeholder="Ingrese fecha">
-                    </div>
-
-                    <!-- Inicio combobox -->
-                    <div class="col-lg-6">
-                        <label for="">Tipo de especialidad</label>
-                        <select class="js-example-basic-single" name="state" id="cbm_especialidad_editar"
-                            style="width:100%;">
-                        </select><br><br>
-                    </div>
-                    <!-- Fin combobox -->
-
-                    <div class="col-lg-4">
-                        <label for="">Pais</label>
-                        <input type="text" class="form-control" id="txt_Paciente_pais_editar" placeholder="Ingrese pais"
-                            maxlength="50" onkeypress="return soloLetras(event)"><br>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="">Departamento</label>
-                        <input type="text" class="form-control" id="txt_Paciente_depa_editar"
-                            placeholder="Ingrese departamento" maxlength="50" onkeypress="return soloLetras(event)"><br>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="">Distrito</label>
-                        <input type="text" class="form-control" id="txt_Paciente_distrito_editar"
-                            placeholder="Ingrese distrito" maxlength="50" onkeypress="return soloLetras(event)"><br>
-                    </div>
                     <div class="col-lg-12">
                         <label for="">Direcci&oacute;n</label>
-                        <input type="text" class="form-control" id="txt_Paciente_direccion_editar"
-                            placeholder="Ingrese direccion" maxlength="250">
+                        <input type="text" class="form-control" id="txt_Dueno_direccion_editar" placeholder="Ingrese direccion"
+                            maxlength="250">
                     </div>
 
                     <div class="col-lg-12">
                         <label for="">Correo</label>
-                        <input type="text" class="form-control" id="txt_Paciente_correo_editar"
-                            placeholder="Ingrese Correo">
-                        <label for="" id="emailOK_editar" style="color:red;"></label>
+                        <input type="text" class="form-control" id="txt_Dueno_correo_editar" placeholder="Ingrese Correo">
+                        <label for="" id="emailOK" style="color:red;"></label>
                         <input type="text" id="validar_email_editar" hidden>
-                    </div>
-
-                    <div class="col-lg-12"><label for=""></label></div>
-
-                    <div class="col-lg-12" style="text-align:center">
-                        <b>Datos del usuario </b><br>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <input type="text" id="txt_id_usuario" hidden>
-                        <label for="">Usuario</label>
-                        <input type="text" class="form-control" id="txt_Paciente_usu_editar"
-                            placeholder="Ingrese Usuario" maxlength="50" disabled>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="">Rol</label>
-                        <select class="js-example-basic-single" name="state" id="cbm_rol_editar" style="width:100%;"
-                            disabled>
-                        </select><br><br>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" onclick="Modificar_Paciente()"><i class="fa fa-check">
+                    <button class="btn btn-primary" onclick="Modificar_Dueno()"><i class="fa fa-check">
                             <b>&nbsp;Modificar</b></i></button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close">
                             <b>&nbsp;Cerrar</b></i></button>
@@ -424,6 +364,20 @@
             $(this).css("border", "1px solid red");
             $("#emailOK").html("Email Incorrecto");
             $("#validar_email").val("incorrecto");
+        }
+    });
+
+    document.getElementById('txt_Dueno_correo_editar').addEventListener('input', function () {
+        campo = event.target;
+        emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+        if (emailRegex.test(campo.value)) {
+            $(this).css("border", "");
+            $("#emailOK_editar").html("");
+            $("#validar_email_editar").val("correcto");
+        } else {
+            $(this).css("border", "1px solid red");
+            $("#emailOK_editar").html("Email Incorrecto");
+            $("#validar_email_editar").val("incorrecto");
         }
     });
 

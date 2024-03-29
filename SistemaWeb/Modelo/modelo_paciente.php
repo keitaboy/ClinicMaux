@@ -64,15 +64,12 @@ class Modelo_Paciente
             $this->conexion->cerrar();
         }
     }
-    
 
-     function Modificar_Paciente($idPaciente,$PacienteNombre,$PacienteApellido,$PacienteDocumento,
-     $PacienteNroDocActual,$PacienteNroDocNuevo,$PacienteCelular,$PacienteGrado,$PacienteFechaNac,$PacienteEspecialiadad,$PacientePais,
-     $PacienteDepa,$PacienteDistrito,$PacienteDireccion,$PacienteCorreo,$IdUsuario)
+    function Modificar_Dueno($idDueno,$DuenoNombre,$DuenoApellido,$DuenoDocumento,
+    $DuenoNroDocActual,$DuenoNroDocNuevo,$DuenoCelular,$DuenoDireccion,$DuenoCorreo)
      {
-         $sql = "call SP_MODIFICAR_Paciente('$idPaciente','$PacienteNombre','$PacienteApellido','$PacienteDocumento',
-         '$PacienteNroDocActual','$PacienteNroDocNuevo','$PacienteCelular','$PacienteGrado','$PacienteFechaNac','$PacienteEspecialiadad','$PacientePais',
-         '$PacienteDepa','$PacienteDistrito','$PacienteDireccion','$PacienteCorreo','$IdUsuario')";
+         $sql = "call SP_MODIFICAR_DUENO('$idDueno','$DuenoNombre','$DuenoApellido','$DuenoDocumento',
+         '$DuenoNroDocActual','$DuenoNroDocNuevo','$DuenoCelular','$DuenoDireccion','$DuenoCorreo')";
          if ($consulta = $this->conexion->conexion->query($sql)) {
              if ($row = mysqli_fetch_array($consulta)) {
                  return $id = trim($row[0]);

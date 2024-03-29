@@ -33,14 +33,14 @@ function listar_consulta() {
         "language": idioma_espanol,
         select: true
     });
-
+    document.getElementById("tabla_consulta_filter").style.display = "none";
     tableconsulta.on('draw.dt', function () {
         var PageInfo = $('#tabla_consulta_medica').DataTable().page.info();
         tableconsulta.column(0, { page: 'current' }).nodes().each(function (cell, i) {
             cell.innerHTML = i + 1 + PageInfo.start;
         });
     });
-    document.getElementById("tabla_consulta_filter").style.display = "none";
+    
 }
 
 $('#tabla_consulta_medica').on('click', '.editar', function () {

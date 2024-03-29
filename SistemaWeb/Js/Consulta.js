@@ -3,9 +3,10 @@ function listar_consulta() {
     var finicio=$("#txt_fechainicio").val();
     var ffin=$("#txt_fechafin").val();
     tableconsulta = $("#tabla_consulta_medica").DataTable({
+        
         "ordering": false,
         "bLengthChange": false,
-        "searching": { "regex": false },
+        "searching": { "regex": true },
         "lenghtMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "ALL"]],
         "pageLenght": 10,
         "destroy": true,

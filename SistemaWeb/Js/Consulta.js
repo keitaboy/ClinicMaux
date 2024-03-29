@@ -24,7 +24,7 @@ function listar_consulta() {
             { "defaultContent": "" },
             { "data": "NumeroDocumento" }, 
             { "data": "Paciente" },
-            { "data": "FechaConsulta" },
+            { "data": "DateMedycalHistory" },
             { "data": "Doctor" },
             { "data": "NombreServicio" }, 
             { "defaultContent": "<button style='font-size:13px;' type='button' class='editar btn btn-primary' title='ed&iacute;tar'><i class='fa fa-edit'></i></button>&nbps;<button style='font-size:13px;' type='button' class='imprimir btn btn-danger' title='imprimir''><i class='fa fa-print'></i></button>" }

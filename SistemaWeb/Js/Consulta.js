@@ -4,8 +4,8 @@ function listar_consulta() {
     var ffin=$("#txt_fechafin").val();
     tableconsulta = $("#tabla_consulta_medica").DataTable({
         "ordering": false,
-        "bLengthChange": true,
-        "searching": { "regex": false },
+        "bLengthChange": false,
+        "searching": { "regex": true },
         "lenghtMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "ALL"]],
         "pageLenght": 10,
         "destroy": true,
@@ -33,8 +33,6 @@ function listar_consulta() {
         select: true
     });
 
-    document.getElementById("tabla_consulta_filter").style.display = "none";
-
     tableconsulta.on('draw.dt', function () {
         var PageInfo = $('#tabla_consulta_medica').DataTable().page.info();
         tableconsulta.column(0, { page: 'current' }).nodes().each(function (cell, i) {
@@ -44,7 +42,6 @@ function listar_consulta() {
 }
 
 $('#tabla_consulta_medica').on('click', '.editar', function () {
-    document.getElementById("tabla_consulta_medica_filter").style.display = "none";
     var data = tableconsulta.row($(this).parents('tr')).data();//deteccion de fila al hacer click y captura de datos
     if (tableconsulta.row(this).child.isShown()) {
         var data = tableconsulta.row(this).data();

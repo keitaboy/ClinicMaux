@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli('clinicmariaaux.cvkwoo8mw8nz.us-east-1.rds.amazonaws.com', 'bd001', '', 'clinicmariaaux1');
+$mysqli = new mysqli('clinicmariaaux.cvkwoo8mw8nz.us-east-1.rds.amazonaws.com', 'bd001', 'bdmariaaux001', 'clinicmariaaux1');
 /*
  * Esta es la forma OO "oficial" de hacerlo,
  * AUNQUE $connect_error estaba averiado hasta PHP 5.2.9 y 5.3.0.

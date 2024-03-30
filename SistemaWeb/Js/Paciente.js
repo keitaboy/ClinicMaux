@@ -301,11 +301,11 @@ function Registrar_Paciente() {
             if(resp==1){
                 $("#modal_registro").modal('hide');
                 listar_Paciente();
-                LimpiarCampos();
+                LimpiarCamposPaciente();
                 Swal.fire("Mensaje de confirmacion", "Datos guardados correctamente","success");         
             }
             else{
-                LimpiarCampos();
+                LimpiarCamposPaciente();
                 Swal.fire("Mensaje de advertencia", "La Doctor ya existe!","warning");
             }
         }

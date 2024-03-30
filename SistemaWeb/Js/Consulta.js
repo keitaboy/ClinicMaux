@@ -34,7 +34,7 @@ function listar_consulta() {
         select: true
     });
 
-    document.getElementById("tabla_consulta_filter").style.display = "none";
+    // document.getElementById("tabla_consulta_filter").style.display = "none";
 
     $('input.column_filter').on('keyup click', function () {
         filterColumn($(this).parents('tr').attr('data-column'));

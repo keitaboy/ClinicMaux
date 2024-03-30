@@ -22,7 +22,6 @@ class conexion{
           $this->contrasena = 'bdmariaaux001';
           $this->basededatos = 'clinicmariaaux1';
       }
-
     function conectar(){
         $this->conexion = new mysqli($this->servidor, $this->usuario, $this->contrasena, $this->basededatos);
 

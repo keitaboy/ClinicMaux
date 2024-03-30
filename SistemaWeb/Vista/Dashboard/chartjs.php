@@ -56,7 +56,7 @@ $(document).ready(function() {
         url: "../ajaxdashboard/dashboard.ajax.php",
         type: 'GET',
         success: function(respuesta) {
-            console.log("Datos de servicios obtenidos:", respuesta);
+            //console.log("Datos de servicios obtenidos:", respuesta);
             var data = JSON.parse(respuesta);
             var servicios = [];
             var serviciosUsados = [];

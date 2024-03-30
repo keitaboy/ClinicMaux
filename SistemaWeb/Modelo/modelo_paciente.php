@@ -9,9 +9,9 @@ class Modelo_Paciente
         $this->conexion->conectar();
     }
 
-    function listar_Paciente()
+    function listar_Paciente($NroDoc)
     {
-        $sql = "call SP_LISTAR_PACIENTE()";
+        $sql = "call SP_LISTAR_PACIENTE('$NroDoc')";
         $arreglo = array();
 
         if ($consulta = $this->conexion->conexion->query($sql)) {

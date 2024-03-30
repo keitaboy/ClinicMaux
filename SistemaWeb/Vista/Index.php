@@ -39,7 +39,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
   <link rel="stylesheet" href="../../Plantilla/plugins/DataTables/datatables.min.css">
   <!-- plugin de select2 -->
   <link rel="stylesheet" href="../../Plantilla/plugins/select2/select2.min.css">
-   <!-- Theme style -->
+  <!-- Theme style -->
   <link rel="stylesheet" href="../../Plantilla/dist/css/AdminLTE.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -54,10 +54,11 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <style>
-  .swal2-popup{
-    font-size:1.6rem !important;
+  .swal2-popup {
+    font-size: 1.6rem !important;
   }
 </style>
+
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -266,9 +267,15 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-          <li class="header">MAIN NAVIGATION</li>
-          <li class="active treeview">         
-          <a onclick="cargar_contenido('contenido_principal','Doctor/Vista_Doctor_Listar.php')">
+          <li class="header">Navegaci&oacute;n Principal</li>
+          <li class="active treeview">
+            <a onclick="cargar_contenido('contenido_principal','Usuario/Vista_Usuario_Listar.php')">
+              <i class="fa fa-users"></i> <span>Usuario</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right">
+                </i></span>
+            </a>
+            <a onclick="cargar_contenido('contenido_principal','Doctor/Vista_Doctor_Listar.php')">
               <i class="fa fa-user-md"></i> <span>Doctores</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right">
@@ -279,30 +286,6 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right">
                 </i></span>
-            </a>
-            <a onclick="cargar_contenido('contenido_principal','Usuario/Vista_Usuario_Listar.php')">
-              <i class="fa fa-users"></i> <span>Usuario</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right">
-                </i></span>
-            </a>
-            <a onclick="cargar_contenido('contenido_principal','Procedimiento/Vista_procedimiento_listar.php')">
-              <i class="fa fa-spinner"></i> <span>Procedimientos</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right">
-                </i></span>
-            </a>
-            <a onclick="cargar_contenido('contenido_principal','Insumo/Vista_insumo_listar.php')">
-              <i class="fa fa-cube"></i> <span>Insumos</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <a onclick="cargar_contenido('contenido_principal','Especialidad/Vista_especialidad_listar.php')">
-              <i class="fa fa-gg"></i> <span>Especialidad</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
             </a>
             <a onclick="cargar_contenido('contenido_principal','Cita/Vista_cita_listar.php')">
               <i class="fa fa-user"></i> <span>Citas</span>
@@ -316,6 +299,25 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
+            <a onclick="cargar_contenido('contenido_principal','Insumo/Vista_insumo_listar.php')">
+              <i class="fa fa-cube"></i> <span>Insumos</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <a onclick="cargar_contenido('contenido_principal','Procedimiento/Vista_procedimiento_listar.php')">
+              <i class="fa fa-spinner"></i> <span>Procedimientos</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right">
+                </i></span>
+            </a>
+            <a onclick="cargar_contenido('contenido_principal','Especialidad/Vista_especialidad_listar.php')">
+              <i class="fa fa-gg"></i> <span>Especialidad</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+
             <!-- Este menu redirige a los dashboard -->
             <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs.php')">
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -560,7 +562,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
   <!-- ./wrapper -->
   <div class="modal fade" id="modal_editar_contra" role="dialog">
     <div class="modal-dialog modal-sm">
-      <div class="modal-content">        
+      <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Modificar contrase&ntilde;a</h4>
@@ -637,29 +639,40 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
       $("#" + contenedor).load(contenido);
     }
     $.widget.bridge('uibutton', $.ui.button);
+
+    function decimal(e) {
+    tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla == 8 || tecla == 46) { // Permitir tecla de retroceso (8) y punto decimal (46)
+        return true;
+    }
+    patron = /[0-9\.]/; // Ajustar el patrón para incluir el punto decimal
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
+    
     function soloNumeros(e) {
-      tecla=(document.all)?e.keyCode:e.which;
-      if (tecla==8) {
+      tecla = (document.all) ? e.keyCode : e.which;
+      if (tecla == 8) {
         return true;
       }
-      patron=/[0-9]/;
-      tecla_final=String.fromCharCode(tecla);
+      patron = /[0-9]/;
+      tecla_final = String.fromCharCode(tecla);
       return patron.test(tecla_final);
     }
-    
+
     function soloLetras(e) {
-      key=e.keyCode||e.which;
-      tecla=String.fromCharCode(key).toLowerCase();
-      letras=" áéíóúabcdefghijklmnñopqrstuvwxyz";
-      especiales="8-37-39-46";
-      tecla_especial=false
-      for(var i in especiales){
-        if (key==especiales[i]) {
-          tecla_especial=true;
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+      especiales = "8-37-39-46";
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
           break;
         }
       }
-      if (letras.indexOf(tecla)==-1 && !tecla_especial) {
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
         return false;
       }
     }
@@ -693,15 +706,15 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
   <!-- ChartJS -->
   <script src="../../Plantilla/bower_components/chart.js/Chart.js"></script>
 
-<!-- AdminLTE for demo purposes -->
-<script src="../../Plantilla/dist/js/demo.js"></script>
-<script src="../../Plantilla/plugins/DataTables/datatables.min.js"></script>
-<script src="../../Plantilla/plugins/select2/select2.min.js"></script>
-<script src="../../Plantilla/plugins/sweetalert2/sweetalert2.js"></script>
-<script src="../Js/Usuario.js"></script>
-<script>
-  TraerDatosUsuario();
-</script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../../Plantilla/dist/js/demo.js"></script>
+  <script src="../../Plantilla/plugins/DataTables/datatables.min.js"></script>
+  <script src="../../Plantilla/plugins/select2/select2.min.js"></script>
+  <script src="../../Plantilla/plugins/sweetalert2/sweetalert2.js"></script>
+  <script src="../Js/Usuario.js"></script>
+  <script>
+    TraerDatosUsuario();
+  </script>
 </body>
 
 </html>

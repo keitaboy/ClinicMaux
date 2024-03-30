@@ -14,7 +14,7 @@ class conexion{
     //       $this->contrasena = '';
     //       $this->basededatos = 'clinicmariaaux1';
     //   }
-
+    
     //conexion a AWS esta lineas van a Master
      public function __construct() {
         $this->servidor = 'clinicmariaaux.cvkwoo8mw8nz.us-east-1.rds.amazonaws.com';

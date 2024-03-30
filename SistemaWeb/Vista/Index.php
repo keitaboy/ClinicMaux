@@ -316,6 +316,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
+            <!-- Este menu redirige a los dashboard -->
             <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs.php')">
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               <span class="pull-right-container">

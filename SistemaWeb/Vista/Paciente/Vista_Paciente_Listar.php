@@ -271,13 +271,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><b>Editar datos del Paciente</b></h4>
+                <h4 class="modal-title"><b>Editar datos del due&nacute;o</b></h4>
             </div>
 
             <div class="modal-body">
                 <div class="row">
-                <div class="col-lg-6">
-                <input type="text" id="txt_idDueno" hidden></input>
+                    <div class="col-lg-6">
+                        <input type="text" id="txt_idDueno" hidden></input>
                         <label for="">Nombre</label>
                         <input type="text" class="form-control" id="txt_Dueno_nombre_editar"
                             placeholder="Ingrese nombre del Dueño" maxlength="50"
@@ -291,7 +291,8 @@
                     </div>
                     <div class="col-lg-6">
                         <label for="">Tipo de documento</label>
-                        <select class="js-example-basic-single" name="state" id="cbm_documento_editar" style="width:100%;">
+                        <select class="js-example-basic-single" name="state" id="cbm_documento_editar"
+                            style="width:100%;">
                         </select><br><br>
                     </div>
                     <div class="col-lg-6">
@@ -303,19 +304,20 @@
                     </div>
                     <div class="col-lg-12">
                         <label for="">Celular</label>
-                        <input type="text" class="form-control" id="txt_Dueno_celular_editar" placeholder="Ingrese celular"
-                            maxlength="9" onkeypress="return soloNumeros(event)"><br>
+                        <input type="text" class="form-control" id="txt_Dueno_celular_editar"
+                            placeholder="Ingrese celular" maxlength="9" onkeypress="return soloNumeros(event)"><br>
                     </div>
 
                     <div class="col-lg-12">
                         <label for="">Direcci&oacute;n</label>
-                        <input type="text" class="form-control" id="txt_Dueno_direccion_editar" placeholder="Ingrese direccion"
-                            maxlength="250">
+                        <input type="text" class="form-control" id="txt_Dueno_direccion_editar"
+                            placeholder="Ingrese direccion" maxlength="250">
                     </div>
 
                     <div class="col-lg-12">
                         <label for="">Correo</label>
-                        <input type="text" class="form-control" id="txt_Dueno_correo_editar" placeholder="Ingrese Correo">
+                        <input type="text" class="form-control" id="txt_Dueno_correo_editar"
+                            placeholder="Ingrese Correo">
                         <label for="" id="emailOK" style="color:red;"></label>
                         <input type="text" id="validar_email_editar" hidden>
                     </div>
@@ -331,9 +333,90 @@
     </div>
 </div>
 
+<div class="modal fade" id="modal_editar_paciente" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><b>Editar datos del Paciente</b></h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="col-lg-6">
+                            <input type="text" id="txt_idPaciente" hidden></input>
+                            <label for="">Nombre</label>
+                            <input type="text" class="form-control" id="txt_Paciente_nombre_editar"
+                                placeholder="Ingrese nombre del Paciente" maxlength="50">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="">Tipo de mascota</label>
+                            <select class="js-example-basic-single" name="state" id="cbm_tipo_mascota_editar"
+                                style="width:100%;">
+                            </select><br><br>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="">Raza</label>
+                            <input type="text" class="form-control" id="txt_Paciente_raza_editar"
+                                placeholder="Ingrese nombre del Paciente" maxlength="50">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="">Color</label>
+                            <input type="text" class="form-control" id="txt_Paciente_color_editar"
+                                placeholder="Ingrese nombre del Paciente" maxlength="50">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="">Peso</label>
+                            <input type="text" class="form-control" id="txt_Paciente_peso_editar"
+                                placeholder="Ingrese nombre del Paciente" maxlength="50">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="">Altura</label>
+                            <input type="text" class="form-control" id="txt_Paciente_altura_editar"
+                                placeholder="Ingrese nombre del Paciente" maxlength="50">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="">Edad</label>
+                            <input type="text" class="form-control" id="txt_Paciente_edad_editar">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="">Fecha de nacimiento</label>
+                            <input type="date" class="form-control" id="txt_Paciente_FechaNac_editar"
+                                placeholder="Ingrese nombre del Paciente" maxlength="50">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="">Sexo</label>
+                            <select class="js-example-basic-single" name="state" id="cbm_sexo_editar"
+                                style="width:100%;">
+                                <option value="M">MACHO</option>
+                                <option value="H">HEMBRA</option>
+                            </select><br><br>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label for="">Esterilizado</label>
+                            <select class="js-example-basic-single" name="state" id="cbm_esterilizado_editar"
+                                style="width:100%;">
+                                <option value="No">NO</option>
+                                <option value="Si">SI</option>
+                            </select><br><br>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" onclick="Modificar_Dueno()"><i class="fa fa-check">
+                                <b>&nbsp;Registrar</b></i></button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close">
+                                <b>&nbsp;Cerrar</b></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     $(document).ready(function () {
-        
         listar_Paciente();
         listar_Dueno();
         listar_combo_tipo_paciente();

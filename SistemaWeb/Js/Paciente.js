@@ -296,23 +296,33 @@ function Registrar_Paciente() {
             PacienteSexo: PacienteSexo,
             PacienteEsterilizar: PacienteEsterilizar
         }
-    }).done(function(resp){
-        if(resp>0){
-            if(resp==1){
-                $("#modal_registro").modal('hide');
-                listar_Paciente();
+    }).done(function (resp) {
+        if (resp > 0) {
+            if (resp == 1) {
+                // Mostrar ventana emergente de pregunta
+                Swal.fire({
+                    title: '¿Desea agregar otra mascota?',
+                    showDenyButton: true,
+                    confirmButtonText: `Sí`,
+                    denyButtonText: `No`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        LimpiarCamposPaciente();
+                        Swal.fire("Mensaje de confirmación", "Agregue los datos de la nueva mascota", "success");
+                    } else if (result.isDenied) {
+                        $("#modal_registrar_paciente").modal('hide');
+                        listar_Paciente();
+                        Swal.fire("Mensaje de confirmación", "Datos guardados correctamente", "success");
+                    }
+                });
+            } else {
                 LimpiarCamposPaciente();
-                Swal.fire("Mensaje de confirmacion", "Datos guardados correctamente","success");         
+                Swal.fire("Mensaje de advertencia", "La paciente ya existe!", "warning");
             }
-            else{
-                LimpiarCamposPaciente();
-                Swal.fire("Mensaje de advertencia", "La Doctor ya existe!","warning");
-            }
+        } else {
+            Swal.fire("Mensaje de error", "No se pudo completar el registro", "error");
         }
-        else{
-            Swal.fire("Mensaje de error", "No se pudo completar el registro","error");
-        }
-    })
+    });
 }
 
 function LimpiarCamposDueno() {

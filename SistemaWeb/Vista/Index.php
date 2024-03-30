@@ -39,6 +39,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
   <link rel="stylesheet" href="../../Plantilla/plugins/DataTables/datatables.min.css">
   <!-- plugin de select2 -->
   <link rel="stylesheet" href="../../Plantilla/plugins/select2/select2.min.css">
+   <!-- Theme style -->
+  <link rel="stylesheet" href="../../Plantilla/dist/css/AdminLTE.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -310,6 +312,12 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
             </a>
             <a onclick="cargar_contenido('contenido_principal','consulta/Vista_consulta_listar.php')">
               <i class="fa fa-stethoscope"></i> <span>Consulta Medica</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs.php')">
+              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -681,6 +689,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
   <!-- AdminLTE App -->
   <script src="../../Plantilla/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <!-- ChartJS -->
+  <script src="../../Plantilla/bower_components/chart.js/Chart.js"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src="../../Plantilla/dist/js/demo.js"></script>

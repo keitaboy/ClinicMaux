@@ -34,12 +34,13 @@ function listar_procedimiento() {
         filterColumn($(this).parents('tr').attr('data-column'));
     });
 
-    tableprocedimiento.on('draw.dt',function(){
-        var PageInfo=$('#tabla_procedimiento_coreccion').DataTable().page.info();
-        tableprocedimiento.column(0,{page:'current'}).nodes().each(function (cell, i){
-            cell.innerHTML=i + 1 + PageInfo.start;
+    tableprocedimiento.on('draw.dt', function(){
+        var PageInfo = $('#tabla_procedimiento').DataTable().page.info();
+        tableprocedimiento.column(0, { page: 'current' }).nodes().each(function (cell, i){
+            cell.innerHTML = i + 1 + PageInfo.start;
         });
     });
+    
 }
 
 function filterGlobal() {

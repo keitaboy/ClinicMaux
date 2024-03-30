@@ -20,8 +20,8 @@
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
-                <div class="col-md-12" style="height:100%;">
-                    <!-- AREA CHART -->
+                <!-- <div class="col-md-12" style="height:100%;">
+                     
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title">Area Chart</h3>
@@ -39,10 +39,10 @@
                                 <canvas id="areaChart" style="height:400px"></canvas>
                             </div>
                         </div>
-                        <!-- /.box-body -->
+                        
                     </div>
-                    <!-- /.box -->
-                </div>
+                    
+                </div> -->
             </div>
             <!-- /.col (RIGHT) -->
         </div>
@@ -106,7 +106,7 @@ $(document).ready(function() {
         }
     });
 
-    $.ajax({
+   /*  $.ajax({
         url: "../ajaxdashboard/dashboard2.ajax.php",
         type: 'GET',
         success: function(respuesta) {
@@ -123,12 +123,7 @@ $(document).ready(function() {
             console.log("Veces:", Veces);
             console.log("Mes:", Mes);
 
-          
-        },
-        error: function(error) {
-            console.log("Error al obtener datos de pacientes:", error);
-        }
-          //- AREA CHART -
+            //- AREA CHART -
             //--------------
 
             // Obtener el contexto del gráfico de área con jQuery
@@ -174,7 +169,11 @@ $(document).ready(function() {
                 data: areaChartData,
                 options: areaChartOptions
             })
-    });
+        },
+        error: function(error) {
+            console.log("Error al obtener datos de pacientes:", error);
+        }
+    }); */
 });
 
 function getRandomColor() {

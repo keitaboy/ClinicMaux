@@ -1,4 +1,4 @@
-<?php require_once "../../csscharts/TradingCharts.css"; ?>
+
     <section class="content">
         <div class="row">
             <!-- /.col (LEFT) -->

@@ -41,6 +41,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
   <link rel="stylesheet" href="../../Plantilla/plugins/select2/select2.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../Plantilla/dist/css/AdminLTE.min.css">
+  <!-- LightWeightCharts -->
+  <link rel="stylesheet" href="../../csscharts/TradingCharts.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -318,9 +320,16 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
               </span>
             </a>
 
-            <!-- Este menu redirige a los dashboard -->
+            <!-- Este menu redirige a los dashboard de Dona -->
             <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs.php')">
-              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+              <i class="fa fa-dashboard"></i> <span>Dashboard de Dona</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <!-- Este menu redirige a los dashboard de Barras -->
+            <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs2.php')">
+              <i class="fa fa-dashboard"></i> <span>Dashboard de Barra</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>

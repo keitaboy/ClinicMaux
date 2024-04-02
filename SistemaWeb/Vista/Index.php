@@ -320,9 +320,16 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
               </span>
             </a>
 
-            <!-- Este menu redirige a los dashboard -->
+            <!-- Este menu redirige a los dashboard de Dona -->
             <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs.php')">
-              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+              <i class="fa fa-dashboard"></i> <span>Dashboard de Dona</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <!-- Este menu redirige a los dashboard de Barras -->
+            <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs2.php')">
+              <i class="fa fa-dashboard"></i> <span>Dashboard de Barra</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>

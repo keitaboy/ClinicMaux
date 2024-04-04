@@ -41,8 +41,6 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
   <link rel="stylesheet" href="../../Plantilla/plugins/select2/select2.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../Plantilla/dist/css/AdminLTE.min.css">
-  <!-- LightWeightCharts -->
-  <link rel="stylesheet" href="../../csscharts/TradingCharts.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -271,49 +269,57 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">Navegaci&oacute;n Principal</li>
           <li class="active treeview">
-            <a onclick="cargar_contenido('contenido_principal','Usuario/Vista_Usuario_Listar.php')">
+          <a onclick="recargarPaginaYcargarContenido('contenido_principal', 'Usuario/Vista_Usuario_Listar.php')">
+            <!-- <a onclick="cargar_contenido('contenido_principal','Usuario/Vista_Usuario_Listar.php')"> -->
               <i class="fa fa-users"></i> <span>Usuario</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right">
                 </i></span>
             </a>
-            <a onclick="cargar_contenido('contenido_principal','Doctor/Vista_Doctor_Listar.php')">
+            <a onclick="recargarPaginaYcargarContenido('contenido_principal', 'Doctor/Vista_Doctor_Listar.php')">
+            <!-- <a onclick="cargar_contenido('contenido_principal','Doctor/Vista_Doctor_Listar.php')"> -->
               <i class="fa fa-user-md"></i> <span>Doctores</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right">
                 </i></span>
             </a>
-            <a onclick="cargar_contenido('contenido_principal','Paciente/Vista_Paciente_Listar.php')">
+            <a onclick="recargarPaginaYcargarContenido('contenido_principal', 'Paciente/Vista_Paciente_Listar.php')">
+            <!-- <a onclick="cargar_contenido('contenido_principal','Paciente/Vista_Paciente_Listar.php')"> -->
               <i class="fa fa-users"></i> <span>Paciente</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right">
                 </i></span>
             </a>
-            <a onclick="cargar_contenido('contenido_principal','Cita/Vista_cita_listar.php')">
+            <a onclick="recargarPaginaYcargarContenido('contenido_principal', 'Cita/Vista_cita_listar.php')">
+            <!-- <a onclick="cargar_contenido('contenido_principal','Cita/Vista_cita_listar.php')"> -->
               <i class="fa fa-user"></i> <span>Citas</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
-            <a onclick="cargar_contenido('contenido_principal','consulta/Vista_consulta_listar.php')">
+            <a onclick="recargarPaginaYcargarContenido('contenido_principal', 'consulta/Vista_consulta_listar.php')">
+            <!-- <a onclick="cargar_contenido('contenido_principal','consulta/Vista_consulta_listar.php')"> -->
               <i class="fa fa-stethoscope"></i> <span>Consulta Medica</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
-            <a onclick="cargar_contenido('contenido_principal','Insumo/Vista_insumo_listar.php')">
+           <a onclick="recargarPaginaYcargarContenido('contenido_principal', 'Insumo/Vista_insumo_listar.php')">      
+            <!-- <a onclick="cargar_contenido('contenido_principal','Insumo/Vista_insumo_listar.php')"> -->
               <i class="fa fa-cube"></i> <span>Insumos</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
-            <a onclick="cargar_contenido('contenido_principal','Procedimiento/Vista_procedimiento_listar.php')">
+            <a onclick="recargarPaginaYcargarContenido('contenido_principal', 'Procedimiento/Vista_procedimiento_listar.php')">
+            <!-- <a onclick="cargar_contenido('contenido_principal','Procedimiento/Vista_procedimiento_listar.php')"> -->
               <i class="fa fa-spinner"></i> <span>Procedimientos</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right">
                 </i></span>
             </a>
-            <a onclick="cargar_contenido('contenido_principal','Especialidad/Vista_especialidad_listar.php')">
+            <a onclick="recargarPaginaYcargarContenido('contenido_principal', 'Especialidad/Vista_especialidad_listar.php')">
+            <!-- <a onclick="cargar_contenido('contenido_principal','Especialidad/Vista_especialidad_listar.php')"> -->
               <i class="fa fa-gg"></i> <span>Especialidad</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -685,6 +691,45 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
         return false;
       }
     }
+    function recargarPaginaYcargarContenido(contenedorId, url) {
+  // Almacenar la URL del contenido en una cookie
+  document.cookie = "url_contenido=" + url;
+  
+  // Recargar la página
+  location.reload();
+}
+
+// Cuando la página se carga completamente
+window.onload = function() {
+  // Obtener la URL del contenido almacenada en la cookie
+  var url_contenido = getCookie("url_contenido");
+  
+  // Si se encuentra la URL del contenido en la cookie
+  if (url_contenido) {
+    // Cargar el contenido en el contenedor especificado
+    cargar_contenido('contenido_principal', url_contenido);
+  }
+};
+
+// Función para obtener el valor de una cookie por su nombre
+function getCookie(cookieName) {
+  var name = cookieName + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var cookieArray = decodedCookie.split(';');
+  for (var i = 0; i < cookieArray.length; i++) {
+    var cookie = cookieArray[i];
+    while (cookie.charAt(0) == ' ') {
+      cookie = cookie.substring(1);
+    }
+    if (cookie.indexOf(name) == 0) {
+      return cookie.substring(name.length, cookie.length);
+    }
+  }
+  return "";
+}
+
+
+
   </script>
   <!-- Bootstrap 3.3.7 -->
   <script src="../../Plantilla/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -5,5 +5,9 @@ Class controlador_dashboard_listar{
         $respuesta=modelo_dashboard::mdlListarServiciosMasUsados();
         return $respuesta;
     }
+
+    static public function ctrListarServiciosMasUsadosAno(){
+        $respuesta=modelo_dashboard::mdlListarServiciosMasUsadosAno();
+        return $respuesta;
+    }
 }
-?>

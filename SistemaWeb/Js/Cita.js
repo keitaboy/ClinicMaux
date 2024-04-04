@@ -34,6 +34,7 @@ function listar_cita() {
                     }
                 }
             },
+            { "data": "Description" }, 
             { "defaultContent": "<button style='font-size:13px;' type='button' class='editar btn btn-primary' title='ed&iacute;tar'><i class='fa fa-edit'></i></button>&nbps;<button style='font-size:13px;' type='button' class='imprimir btn btn-danger' title='imprimir''><i class='fa fa-print'></i></button>" }
         ],
         "language": "idioma_espanol",
@@ -61,8 +62,6 @@ $('#tabla_cita').on('click', '.editar', function () {
     }
     $("#modal_editar").modal({ backdrop: 'static', keyboard: false })
     $("#modal_editar").modal('show');
-    listar_paciente_combo();
-    listar_doctor_combo();
     $("#txt_cita_id").val(data.IdAppointment);
     $("#cbm_paciente_editar").val(data.IdPacient).trigger("change");
     $("#cbm_doctor_editar").val(data.IdDoc).trigger("change");
@@ -137,6 +136,11 @@ function Registrar_Cita(){
     var iddoctor = $("#cbm_doctor").val();
     var descripcion = $("#txt_descripcion").val();
     var idusuario= $("#txtidprincipal").val();
+
+    console.log(idpaciente);
+    console.log(iddoctor);
+    console.log(descripcion);
+    console.log(idusuario);
     
     if(idpaciente.length == 0 || iddoctor.length == 0 || descripcion.length == 0){        
         return Swal.fire("Mensaje de advertencia", "Llene los campos vacios","warning");

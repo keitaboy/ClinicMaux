@@ -151,7 +151,7 @@
 
         // AJAX para el segundo gráfico
         $.ajax({
-            url: "../ajaxdashboard/dashboard2.ajax.php",
+            url: "../ajaxdashboard/dashboard3.ajax.php",
             type: 'GET',
             success: function (respuesta) {
                 console.log("Datos de servicios obtenidos:", respuesta);

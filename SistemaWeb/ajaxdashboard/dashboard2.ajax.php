@@ -9,4 +9,3 @@ Class AjaxProcesos{
 }
 $procesos = new AjaxProcesos();
 $procesos->ListarPacientesxMes();
-?>

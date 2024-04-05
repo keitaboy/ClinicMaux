@@ -71,9 +71,7 @@ class Modelo_Cita
         if ($consulta = $this->conexion->conexion->query($sql)) {
                 return 1;
         }else{
-                return 0;
-        }
-        $this->conexion->cerrar();
+            $this->conexion->cerrar();
+        }        
     }
-
 }

@@ -35,6 +35,7 @@
                         <th>Medico</th>
                         <th>Fecha</th>
                         <th>Estatus</th>
+                        <th>Descripci&oacute;n</th>
                         <th>Acci&oacute;n</th>
                     </tr>
                 </thead>

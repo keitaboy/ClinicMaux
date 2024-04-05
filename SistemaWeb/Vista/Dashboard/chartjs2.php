@@ -2,7 +2,7 @@
     <!-- BAR CHART -->
     <div class="box box-danger">
         <div class="box-header with-border">
-            <h3 class="box-title">Historial de Número de pacientes atendidos por Año</h3>
+            <h3 class="box-title">Historial de Número de pacientes unicos atendidos por Año</h3>
         </div>
         <div class="box-body">
             <canvas id="barChart2" style="height:400px"></canvas>
@@ -13,7 +13,7 @@
     <!-- BAR CHART -->
     <div class="box box-danger">
         <div class="box-header with-border">
-            <h3 class="box-title">Historial de Número de pacientes atendidos por Mes del año Actual</h3>
+            <h3 class="box-title">Historial de Número de pacientes unicos atendidos por Mes del año Actual</h3>
         </div>
         <div class="box-body">
             <canvas id="barChart" style="height:400px"></canvas>
@@ -24,7 +24,7 @@
     <!-- BAR CHART -->
     <div class="box box-danger">
         <div class="box-header with-border">
-            <h3 class="box-title">Historial de Número de pacientes atendidos por Día en el Mes y Año actual</h3>
+            <h3 class="box-title">Historial de Número de pacientes unicos atendidos por Día en el Mes y Año actual</h3>
         </div>
         <div class="box-body">
             <canvas id="barChart1" style="height:400px"></canvas>

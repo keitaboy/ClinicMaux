@@ -1,7 +1,8 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once '/../../../conexion_reportes/r_conexion.php';
+require_once '../../../../SistemaWeb/conexion_reportes/r_conexion.php';
+$html = '';
 $consulta= "select 
 a.IdAppointment, 
 a.RegistrationDate, 

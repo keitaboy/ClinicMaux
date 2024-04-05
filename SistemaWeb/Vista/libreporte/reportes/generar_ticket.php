@@ -1,7 +1,10 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once '/../../../conexion_reportes/r_conexion.php';
+require_once '../../../../SistemaWeb/conexion_reportes/r_conexion.php';
+
+$html = '';
+
 $consulta= "select 
 a.IdAppointment, 
 a.RegistrationDate, 
@@ -47,4 +50,3 @@ while ($row=$resultado->fetch_assoc()) {
 $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [80, 150]]);
 $mpdf->WriteHTML($html);
 $mpdf->Output();
-?>

@@ -2,10 +2,10 @@
 require_once "../Controlador/Dashboard/controlador_dashboard_listar.php";
 require_once "../Modelo/modelo_dashboard.php";
 Class AjaxProcesos{
-    public function ListarServiciosMasUsados(){
-        $respuesta=controlador_dashboard_listar::ctrListarServiciosMasUsados();
+    public function ListarServiciosMasUsadosDia(){
+        $respuesta=controlador_dashboard_listar::ctrListarServiciosMasUsadosDia();
         echo json_encode($respuesta);
     }
 }
 $procesos = new AjaxProcesos();
-$procesos->ListarServiciosMasUsados();
+$procesos->ListarServiciosMasUsadosDia();

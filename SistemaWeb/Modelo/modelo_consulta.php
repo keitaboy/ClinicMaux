@@ -11,7 +11,7 @@ class Modelo_Consulta
 
     function listar_consulta($fechainicio,$fechafin)
     {
-        $sql = "call SP_LISTAR_CONSULTA('$fechainicio','$fechafin')";
+        $sql = "call SP_LISTAR_CONSULTA_SIN_HISTORIAL_MEDICO('$fechainicio','$fechafin')";
         $arreglo = array();
 
         if ($consulta = $this->conexion->conexion->query($sql)) {

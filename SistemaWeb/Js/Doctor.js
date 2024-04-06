@@ -173,7 +173,7 @@ function listar_combo_documento() {
      var DoctorPassword = $("#txt_doctor_pass").val();
      var DoctorSexo = $("#cbm_sexo").val();
      var DoctorRol = $("#cbm_rol").val();
-     var EmailOk = $("#emailOK").val();
+     var EmailOk = $("#emailOK").val();  
 
      if(EmailOk == "Incorrecto"){
          return Swal.fire("Advertencia", "El correo electronico no tiene un formato correcto","warning");
@@ -212,7 +212,6 @@ function listar_combo_documento() {
          if(resp>0){
              if(resp==1){
                  $("#modal_registro").modal('hide');
-                 listar_Doctor();
                  LimpiarCampos();
                  Swal.fire("Mensaje de confirmacion", "Datos guardados correctamente","success");         
              }

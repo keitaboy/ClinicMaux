@@ -175,6 +175,24 @@ function listar_combo_documento() {
      var DoctorRol = $("#cbm_rol").val();
      var EmailOk = $("#emailOK").val();
 
+     console.log(DoctorNombre);
+     console.log(DoctorApellido);
+     console.log(DoctorDocumento);
+     console.log(DoctorNroDoc);
+     console.log(DoctorCelular);
+     console.log(DoctorGrado);
+     console.log(DoctorFechaNac);
+     console.log(DoctorEspecialiadad);
+     console.log(DoctorPais);     
+     console.log(DoctorDepa);
+     console.log(DoctorDistrito);
+     console.log(DoctorDireccion);
+     console.log(DoctorCorreo);
+     console.log(DoctorUsuario);
+     console.log(DoctorPassword);
+     console.log(DoctorSexo);
+     console.log(DoctorRol);     
+
      if(EmailOk == "Incorrecto"){
          return Swal.fire("Advertencia", "El correo electronico no tiene un formato correcto","warning");
      }

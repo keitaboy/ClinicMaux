@@ -84,12 +84,11 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
             <li class="dropdown notifications-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
-                <span class="label label-warning">10</span>
+                <!-- <span class="label label-warning">10</span> -->
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have 10 notifications</li>
-                <li>
-                  <!-- inner menu: contains the actual data -->
+                <li class="header">You don't have notifications</li>
+                <!-- <li>
                   <ul class="menu">
                     <li>
                       <a href="#">
@@ -118,7 +117,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> -->
                 <li class="footer"><a href="#">View all</a></li>
               </ul>
             </li>
@@ -126,14 +125,14 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
             <li class="dropdown tasks-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-flag-o"></i>
-                <span class="label label-danger">9</span>
+                <!-- <span class="label label-danger">9</span> -->
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have 9 tasks</li>
-                <li>
-                  <!-- inner menu: contains the actual data -->
+                <li class="header">You don't have tasks</li>
+                <!-- <li>
+                  
                   <ul class="menu">
-                    <li><!-- Task item -->
+                    <li>
                       <a href="#">
                         <h3>
                           Design some buttons
@@ -147,8 +146,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                         </div>
                       </a>
                     </li>
-                    <!-- end task item -->
-                    <li><!-- Task item -->
+                    
+                    <li>
                       <a href="#">
                         <h3>
                           Create a nice theme
@@ -162,8 +161,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                         </div>
                       </a>
                     </li>
-                    <!-- end task item -->
-                    <li><!-- Task item -->
+                    
+                    <li>
                       <a href="#">
                         <h3>
                           Some task I need to do
@@ -177,8 +176,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                         </div>
                       </a>
                     </li>
-                    <!-- end task item -->
-                    <li><!-- Task item -->
+                    
+                    <li>
                       <a href="#">
                         <h3>
                           Make beautiful transitions
@@ -192,9 +191,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                         </div>
                       </a>
                     </li>
-                    <!-- end task item -->
                   </ul>
-                </li>
+                </li> -->
                 <li class="footer">
                   <a href="#">View all tasks</a>
                 </li>
@@ -330,14 +328,21 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
 
             <!-- Este menu redirige a los dashboard de Dona -->
             <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs.php')">
-              <i class="fa fa-dashboard"></i> <span>Dashboard de Dona</span>
+              <i class="fa fa-dashboard"></i> <span>Dashboard de Servicios</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <!-- Este menu redirige a los dashboard de Barras -->
             <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs2.php')">
-              <i class="fa fa-dashboard"></i> <span>Dashboard de Barra</span>
+              <i class="fa fa-dashboard"></i> <span>Dashboard de Pacientes</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <!-- Este menu redirige a los dashboard de Barras -->
+            <a onclick="cargar_contenido('contenido_principal','Dashboard/chartjs3.php')">
+              <i class="fa fa-dashboard"></i> <span>Dashboard de Citas</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>

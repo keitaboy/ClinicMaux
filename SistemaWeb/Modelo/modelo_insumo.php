@@ -29,11 +29,13 @@ class Modelo_Insumo
         $sql = "call SP_REGISTRAR_INSUMO('$insumo', '$stock', '$estatus', '$item')";
         if ($consulta = $this->conexion->conexion->query($sql)) {
             if ($row = mysqli_fetch_array($consulta)) {
-                return $id = trim($row[0]);
+                return trim($row[0]);
             }
             $this->conexion->cerrar();
         }
+        return false; // Devuelve false si no hay resultados
     }
+    
 
     function Modificar_Insumo($id,$insumonuevo,$insumoactual,$stock,$estatus,$item)
     {

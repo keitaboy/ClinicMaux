@@ -40,7 +40,7 @@
         url: "../ajaxdashboard/dashboard2.ajax.php",
         type: 'GET',
         success: function(respuesta) {
-            console.log("Datos de numero de pacientes obtenidos:", respuesta);
+           // console.log("Datos de numero de pacientes obtenidos:", respuesta);
             var data = JSON.parse(respuesta);
             var Mes = [];
             var Veces = [];
@@ -84,7 +84,7 @@
         url: "../ajaxdashboard/dashboard4.ajax.php",
         type: 'GET',
         success: function(respuesta) {
-            console.log("Datos de numero de pacientes obtenidos:", respuesta);
+          //  console.log("Datos de numero de pacientes obtenidos:", respuesta);
             var data = JSON.parse(respuesta);
             var Dia = [];
             var Veces = [];
@@ -128,7 +128,7 @@
         url: "../ajaxdashboard/dashboard5.ajax.php",
         type: 'GET',
         success: function(respuesta) {
-            console.log("Datos de numero de pacientes obtenidos:", respuesta);
+           // console.log("Datos de numero de pacientes obtenidos:", respuesta);
             var data = JSON.parse(respuesta);
             var Anio = [];
             var Veces = [];

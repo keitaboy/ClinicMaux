@@ -108,7 +108,7 @@
             url: "../ajaxdashboard/dashboard.ajax.php",
             type: 'GET',
             success: function (respuesta) {
-                console.log("Datos de servicios obtenidos:", respuesta);
+            //    console.log("Datos de servicios obtenidos:", respuesta);
                 var data = JSON.parse(respuesta);
                 var servicios = [];
                 var serviciosUsados = [];
@@ -131,7 +131,7 @@
             url: "../ajaxdashboard/dashboard1.ajax.php",
             type: 'GET',
             success: function (respuesta) {
-                console.log("Datos de servicios obtenidos:", respuesta);
+               // console.log("Datos de servicios obtenidos:", respuesta);
                 var data = JSON.parse(respuesta);
                 var serviciosAno = [];
                 var serviciosUsadosAno = [];
@@ -154,7 +154,7 @@
             url: "../ajaxdashboard/dashboard3.ajax.php",
             type: 'GET',
             success: function (respuesta) {
-                console.log("Datos de servicios obtenidos:", respuesta);
+               // console.log("Datos de servicios obtenidos:", respuesta);
                 var data = JSON.parse(respuesta);
                 var serviciosAno = [];
                 var serviciosUsadosAno = [];

@@ -17,7 +17,7 @@
         url: "../ajaxdashboard/dashboard6.ajax.php",
         type: 'GET',
         success: function(respuesta) {
-            console.log("Datos de numero de pacientes obtenidos:", respuesta);
+          //  console.log("Datos de numero de pacientes obtenidos:", respuesta);
             var data = JSON.parse(respuesta);
             var Anio = [];
             var Veces = [];

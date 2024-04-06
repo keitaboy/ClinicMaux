@@ -136,11 +136,6 @@ function Registrar_Cita(){
     var iddoctor = $("#cbm_doctor").val();
     var descripcion = $("#txt_descripcion").val();
     var idusuario= $("#txtidprincipal").val();
-
-    console.log(idpaciente);
-    console.log(iddoctor);
-    console.log(descripcion);
-    console.log(idusuario);
     
     if(idpaciente.length == 0 || iddoctor.length == 0 || descripcion.length == 0){        
         return Swal.fire("Mensaje de advertencia", "Llene los campos vacios","warning");
